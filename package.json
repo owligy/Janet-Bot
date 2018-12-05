@@ -1,0 +1,11 @@
+{
+  "name": "janet-bot",
+  "version": "1.0.0",
+  "description": "Janet is a helpful and friendly face, happy to answer your questions",
+  "main": "bot.js",
+  "author": "rudyards",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "winston": "^3.1.0"
+  }
+}
