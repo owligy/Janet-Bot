@@ -3,9 +3,8 @@ var logger = require('winston');
 var auth = require('./auth.json');
 // Configure logger settings
 logger.remove(logger.transports.Console);
-logger.add(logger.transports.Console, {
-    colorize: true
-});
+logger.add(new logger.transports.Console, { colorize: true });
+
 logger.level = 'debug';
 // Initialize Discord Bot
 var bot = new Discord.Client({
@@ -20,11 +19,11 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.substring(0, 1) == '!') {
+    if (message.substring(0, 9) == 'Hey Janet') {
         var args = message.substring(1).split(' ');
-        var cmd = args[0];
-       
-        args = args.splice(1);
+        var cmd = args[2];
+
+
         switch(cmd) {
             // !ping
             case 'ping':
